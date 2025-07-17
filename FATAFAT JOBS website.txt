@@ -1,0 +1,1071 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FATAFAT JOBS - Your Ultimate Government Update Portal</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Poppins (for bolder headings) and Inter (for body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e2e8f0; /* Lighter blue-gray background */
+            color: #334155; /* Slate 700 */
+        }
+        .header-bg {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); /* Vibrant Indigo to Purple Gradient */
+            animation: gradientShift 10s ease infinite;
+            background-size: 200% 200%;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .main-heading {
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3); /* Subtle text shadow for depth */
+        }
+
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 1.25rem; /* More rounded corners */
+            box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+            padding: 2rem; /* Increased padding */
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            border: 1px solid #cbd5e1; /* Light border */
+        }
+        .section-card:hover {
+            transform: translateY(-8px); /* More pronounced lift */
+            box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.25), 0 6px 10px -3px rgba(0, 0, 0, 0.1); /* Even stronger shadow on hover */
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            color: #4f46e5; /* Indigo 600 */
+            font-weight: 700; /* Bolder */
+            border-bottom: 3px solid #a5b4fc; /* Thicker, lighter blue border */
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .section-title svg {
+            color: #6366f1; /* Indigo 500 */
+            margin-right: 0.75rem;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem; /* Increased padding */
+            margin-bottom: 0.75rem; /* More space between items */
+            background-color: #f1f5f9; /* Light blue-gray background */
+            border-radius: 0.75rem; /* More rounded */
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border-left: 5px solid #818cf8; /* Left border for accent */
+        }
+        .link-item:hover {
+            background-color: #e0e7ff; /* Lighter blue on hover */
+            transform: translateY(-3px); /* Slightly more lift */
+            box-shadow: 0 6px 12px -4px rgba(0, 0, 0, 0.15); /* More subtle shadow on hover */
+        }
+        .link-item a {
+            color: #4338ca; /* Indigo 700 */
+            font-weight: 600; /* Bolder link text */
+            text-decoration: none;
+            flex-grow: 1;
+        }
+        .link-item a:hover {
+            text-decoration: underline;
+        }
+        .new-badge {
+            background-color: #ef4444; /* Red 500 */
+            color: #ffffff;
+            font-size: 0.8rem; /* Slightly larger */
+            font-weight: 700; /* Bolder */
+            padding: 0.35rem 0.75rem; /* More padding */
+            border-radius: 0.5rem; /* More rounded */
+            margin-left: 0.75rem; /* More space */
+            box-shadow: 0 2px 4px rgba(239, 68, 68, 0.4); /* Subtle shadow for badge */
+        }
+
+        /* Adjust search input styling for new header look */
+        #searchInput {
+            border: none; /* Remove default border */
+            background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
+            color: white;
+            padding-left: 3.5rem; /* Space for icon */
+        }
+        #searchInput::placeholder {
+            color: rgba(255, 255, 255, 0.7); /* Lighter placeholder text */
+        }
+        #searchInput:focus {
+            background-color: rgba(255, 255, 255, 0.3); /* More opaque on focus */
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(165, 180, 252, 0.5); /* Focus ring with lighter blue */
+        }
+        .search-icon {
+            color: rgba(255, 255, 255, 0.8); /* White icon */
+            left: 1rem; /* Adjust icon position */
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #1e293b; /* Darker slate background */
+            color: #cbd5e1; /* Light slate text */
+            padding: 2.5rem 0; /* More padding */
+        }
+        footer a {
+            color: #93c5fd; /* Light blue links */
+            transition: color 0.2s ease-in-out;
+        }
+        footer a:hover {
+            color: #bfdbfe; /* Lighter blue on hover */
+        }
+
+        /* Logo specific styling */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem; /* Base size, adjust with Tailwind classes */
+            color: #ffffff;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+        }
+        .logo-svg {
+            width: 3.5rem; /* Adjust size as needed */
+            height: 3.5rem;
+            margin-right: 0.75rem;
+            fill: #ffffff; /* Default fill for the SVG */
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4)); /* Shadow for the SVG */
+        }
+        @media (min-width: 768px) { /* md breakpoint */
+            .logo-container {
+                font-size: 3rem; /* Larger on desktop */
+            }
+            .logo-svg {
+                width: 4.5rem;
+                height: 4.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="header-bg text-white shadow-lg py-6 md:py-8">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+            <div class="logo-container mb-3 md:mb-0" data-key="main-title-logo">
+                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#a5b4fc" />
+                            <stop offset="100%" stop-color="#e0e7ff" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- 3D effect for F (multiple layers for depth) -->
+                    <!-- Backmost layer (darkest) -->
+                    <path d="M25 25 H75 V40 H40 V85 H25 Z" fill="#312e81" transform="translate(4,4)"/>
+                    <!-- Mid layer -->
+                    <path d="M25 25 H75 V40 H40 V85 H25 Z" fill="#4338ca" transform="translate(2,2)"/>
+                    <!-- Front layer (gradient) -->
+                    <path d="M25 25 H75 V40 H40 V85 H25 Z" fill="url(#logoGradient)"/>
+
+                    <!-- 'J' shape - simple stroke, positioned to appear over 'F' -->
+                    <path d="M70 20 V65 C70 80, 55 80, 55 65 V55" stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <!-- Dot for 'J' -->
+                    <circle cx="70" cy="15" r="5" fill="#ffffff"/>
+                </svg>
+                <span>FATAFAT JOBS</span>
+            </div>
+            <nav class="space-x-4 md:space-x-6 text-xl font-medium flex items-center">
+                <a href="#jobs" class="hover:text-blue-200 transition duration-300 ease-in-out" data-key="nav-jobs">Jobs</a>
+                <a href="#schemes" class="hover:text-blue-200 transition duration-300 ease-in-out" data-key="nav-schemes">Schemes</a>
+                <a href="#results" class="hover:text-blue-200 transition duration-300 ease-in-out" data-key="nav-results">Results</a>
+                <a href="#admit-cards" class="hover:text-blue-200 transition duration-300 ease-in-out" data-key="nav-admit-cards">Admit Cards</a>
+                <a href="#admission-notifications" class="hover:text-blue-200 transition duration-300 ease-in-out" data-key="nav-admission">Admissions</a>
+                <a href="#scholarship-notifications" class="hover:text-blue-200 transition duration-300 ease-in-out" data-key="nav-scholarships">Scholarships</a>
+                <a href="#important-links" class="hover:text-blue-200 transition duration-300 ease-in-out" data-key="nav-more">More</a>
+                
+                <!-- Language Selector -->
+                <div class="relative inline-block text-left ml-4">
+                    <select id="language-selector" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-blue-500">
+                        <option value="">Select Language</option>
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी</option>
+                        <option value="pa">ਪੰਜਾਬੀ</option>
+                        <option value="bn">বাংলা</option>
+                        <option value="mr">मराठी</option>
+                        <option value="ta">தமிழ்</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Search Bar -->
+        <div class="container mx-auto px-4 mt-6 md:mt-8">
+            <div class="relative">
+                <input type="text" id="searchInput" placeholder="Search for jobs, schemes, results..."
+                       class="w-full p-4 rounded-xl shadow-lg focus:outline-none focus:ring-2" data-key="search-placeholder">
+                <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none search-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-10 md:py-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Latest Job Updates Section -->
+            <section id="jobs" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 section-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 10h.01M19 10h.01M17 16H7a2 2 0 00-2 2v2a2 2 0 002 2h10a2 2 0 002-2v-2a2 2 0 00-2-2z" />
+                    </svg>
+                    <span data-key="jobs-title">Latest Job Updates</span>
+                </h2>
+                <p class="text-sm text-gray-600 mb-4" data-key="jobs-intro">
+                    Below are illustrative job updates. For comprehensive and real-time notifications across all **states and union territories** and central government, please refer to official government websites like <a href="https://www.ncs.gov.in/" target="_blank" class="text-blue-600 hover:underline">National Career Service</a>, <a href="https://www.freejobalert.com/" target="_blank" class="text-blue-600 hover:underline">FreeJobAlert.com</a>, or <a href="https://www.sarkariresult.com/" target="_blank" class="text-blue-600 hover:underline">SarkariResult.com</a>. **To apply, click on the links below and replace the placeholder URLs with the actual application form links from the official notifications.**
+                </p>
+                <ul id="job-list">
+                    <li class="link-item">
+                        <a href="https://example.com/ssc-cgl-2024-apply" target="_blank" data-key="job-ssc-cgl">SSC CGL 2024 Notification Released</a>
+                        <span class="new-badge" data-key="new-badge">NEW</span>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/railways-groupd-2024-apply" target="_blank" data-key="job-railways-groupd">Indian Railways Group D Recruitment 2024</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/upsc-cse-2024-apply" target="_blank" data-key="job-upsc-cse">UPSC Civil Services Exam 2024 Application</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/bank-po-clerk-2024-apply" target="_blank" data-key="job-bank-po">Bank PO/Clerk Vacancies in SBI & PNB</a>
+                        <span class="new-badge" data-key="new-badge">NEW</span>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/police-constable-state-apply" target="_blank" data-key="job-police-constable">Police Constable Recruitment - State Wise</a>
+                    </li>
+                </ul>
+
+                <!-- Job Description Summarizer Feature -->
+                <div class="mt-8 pt-6 border-t border-gray-200">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4" data-key="summarizer-title">Job Description Summarizer ✨</h3>
+                    <textarea id="jobDescriptionInput" rows="6" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Paste a job description here to get a quick summary..." data-key="summarizer-placeholder"></textarea>
+                    <button id="summarizeButton" class="mt-4 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 ease-in-out w-full md:w-auto" data-key="summarizer-button">Summarize Job Description ✨</button>
+                    <div id="summaryOutput" class="mt-6 p-4 bg-blue-50 rounded-lg border border-blue-200 text-blue-800 hidden">
+                        <p class="font-medium" data-key="summary-label">Summary:</p>
+                        <p id="summaryText" class="mt-2 text-gray-700"></p>
+                    </div>
+                    <div id="summarizerLoading" class="mt-6 text-center text-blue-600 hidden">
+                        <svg class="animate-spin h-8 w-8 text-blue-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <p data-key="loading-text">Generating summary...</p>
+                    </div>
+                    <div id="summarizerError" class="mt-6 p-4 bg-red-50 rounded-lg border border-red-200 text-red-800 hidden" data-key="error-message">
+                        <p>Error: Could not generate summary. Please try again.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Government Schemes Section -->
+            <section id="schemes" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 section-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <span data-key="schemes-title">Government Schemes</span>
+                </h2>
+                <p class="text-sm text-gray-600 mb-4" data-key="schemes-intro">
+                    Below are illustrative government schemes. For a comprehensive list and detailed information on central and **state and union territories** government schemes, including eligibility and application processes, please visit official portals like <a href="https://www.myscheme.gov.in/" target="_blank" class="text-blue-600 hover:underline">myScheme.gov.in</a> or <a href="https://www.jansamarth.in/" target="_blank" class="text-blue-600 hover:underline">JanSamarth.in</a>. **Click on the links below to find more information or the application process on the respective official sites.**
+                </p>
+                <ul id="scheme-list">
+                    <li class="link-item">
+                        <a href="https://example.com/pmjdy-info" target="_blank" data-key="scheme-pmjdy">Pradhan Mantri Jan Dhan Yojana (PMJDY)</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/pmjay-info" target="_blank" data-key="scheme-pmjay">Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (PMJAY)</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/pmay-info" target="_blank" data-key="scheme-pmay">Pradhan Mantri Awas Yojana (PMAY)</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/ssy-info" target="_blank" data-key="scheme-ssy">Sukanya Samriddhi Yojana (SSY)</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/apy-info" target="_blank" data-key="scheme-apy">Atal Pension Yojana (APY)</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Latest Results Section -->
+            <section id="results" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 section-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span data-key="results-title">Latest Results</span>
+                </h2>
+                <ul id="result-list">
+                    <li class="link-item">
+                        <a href="https://example.com/upsc-cse-mains-result-2023" target="_blank" data-key="result-upsc-mains">UPSC Civil Services Mains Result 2023</a>
+                        <span class="new-badge" data-key="new-badge">NEW</span>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/ssc-gd-constable-result-2023" target="_blank" data-key="result-ssc-gd">SSC GD Constable Final Result 2023</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/ibps-po-xi-result" target="_blank" data-key="result-ibps-po">IBPS PO XI Final Result</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/neet-ug-2024-result" target="_blank" data-key="result-neet-ug">NEET UG 2024 Result Declared</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/railway-ntpc-cbt2-result" target="_blank" data-key="result-railway-ntpc">Railway NTPC CBT-2 Result</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Admit Cards Section -->
+            <section id="admit-cards" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 section-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h10a2 2 0 002-2V8m-2 2l4 4m0 0l4-4m-4 4V3" />
+                    </svg>
+                    <span data-key="admit-cards-title">Admit Cards</span>
+                </h2>
+                <ul id="admit-card-list">
+                    <li class="link-item">
+                        <a href="https://example.com/ssc-chsl-2024-admitcard" target="_blank" data-key="admit-ssc-chsl">SSC CHSL 2024 Tier I Admit Card</a>
+                        <span class="new-badge" data-key="new-badge">NEW</span>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/upsc-nda-2024-admitcard" target="_blank" data-key="admit-upsc-nda">UPSC NDA I 2024 Admit Card</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/ctet-july-2024-admitcard" target="_blank" data-key="admit-ctet-july">CTET July 2024 Admit Card</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/jee-main-2024-admitcard" target="_blank" data-key="admit-jee-main">JEE Main 2024 Session 2 Admit Card</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/uptet-2024-admitcard" target="_blank" data-key="admit-uptet">UPTET 2024 Admit Card</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Admission Notifications Section -->
+            <section id="admission-notifications" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 section-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-4m0 0l4 4m-4-4v4m-6-4h.01M5 19h.01" />
+                    </svg>
+                    <span data-key="admission-title">Admission Notifications</span>
+                </h2>
+                <p class="text-sm text-gray-600 mb-4" data-key="admission-intro">
+                    Find the latest updates on university admissions, entrance exams, and application deadlines across various educational institutions. **Click on the links below and replace the placeholder URLs with the actual notification or application links from the official sources.**
+                </p>
+                <ul id="admission-list">
+                    <li class="link-item">
+                        <a href="https://example.com/jee-advanced-2024-admission" target="_blank" data-key="admission-jee-advanced">JEE Advanced 2024 Application Open</a>
+                        <span class="new-badge" data-key="new-badge">NEW</span>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/du-ug-admission-2024" target="_blank" data-key="admission-du-ug">Delhi University UG Admissions 2024 Started</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/ignou-admission-july-2024" target="_blank" data-key="admission-ignou">IGNOU July 2024 Session Admission</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/state-cet-2024-notification" target="_blank" data-key="admission-state-cet">State CET 2024 Notification Released</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/iim-cat-2024-registration" target="_blank" data-key="admission-iim-cat">IIM CAT 2024 Registration Begins</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Scholarship Notifications Section -->
+            <section id="scholarship-notifications" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 section-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 8h6m-5 0h.01M9 12h6m-5 0h.01M9 16h6m-5 0h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span data-key="scholarship-title">Scholarship Notifications</span>
+                </h2>
+                <p class="text-sm text-gray-600 mb-4" data-key="scholarship-intro">
+                    Find the latest scholarship opportunities from central and **all states and union territories** governments. These include merit-based, need-based, and category-specific scholarships. For comprehensive details and application, refer to official portals like <a href="https://scholarships.gov.in/" target="_blank" class="text-blue-600 hover:underline">National Scholarship Portal</a> or <a href="https://www.buddy4study.com/scholarships/state-scholarships" target="_blank" class="text-blue-600 hover:underline">Buddy4Study (State Scholarships)</a>. **Click on the links below and replace the placeholder URLs with the actual notification or application links from the official sources.**
+                </p>
+                <ul id="scholarship-list">
+                    <li class="link-item">
+                        <a href="https://example.com/nsp-pre-matric-2024" target="_blank" data-key="scholarship-nsp-pre">NSP Pre-Matric Scholarship 2024-25</a>
+                        <span class="new-badge" data-key="new-badge">NEW</span>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/nsp-post-matric-2024" target="_blank" data-key="scholarship-nsp-post">NSP Post-Matric Scholarship 2024-25</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/state-scholarship-xyz" target="_blank" data-key="scholarship-state-xyz">State-Specific Scholarship (e.g., UP, MP, Punjab)</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/ugc-scholarship-2024" target="_blank" data-key="scholarship-ugc">UGC Scholarship Schemes 2024</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/minority-scholarship-2024" target="_blank" data-key="scholarship-minority">Minority Affairs Scholarship 2024</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Important Links / Quick Links Section -->
+            <section id="important-links" class="section-card">
+                <h2 class="text-2xl font-semibold mb-4 section-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.102 1.101m-4.899.758l-.101.102M12 12l.707.707L12.707 13l-.707-.707z" />
+                    </svg>
+                    <span data-key="important-links-title">Important Links</span>
+                </h2>
+                <ul id="important-link-list">
+                    <li class="link-item">
+                        <a href="https://www.ncs.gov.in/" target="_blank" data-key="link-official-portals">Official Government Job Portals (e.g., NCS)</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://www.freejobalert.com/" target="_blank" data-key="link-state-updates">State-wise Job Updates (e.g., FreeJobAlert)</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/exam-syllabus" target="_blank">Exam Syllabus & Pattern</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/previous-papers" target="_blank">Previous Year Question Papers</a>
+                    </li>
+                    <li class="link-item">
+                        <a href="https://example.com/daily-current-affairs" target="_blank">Daily Current Affairs</a>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Admin Panel Section (Placeholder) -->
+            <section id="admin-panel" class="section-card lg:col-span-1">
+                <h2 class="text-2xl font-semibold mb-4 section-title">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                    </svg>
+                    <span data-key="admin-title">Admin Panel (Login)</span>
+                </h2>
+                <div class="text-gray-600">
+                    <p class="mb-4" data-key="admin-intro-1">This section would typically require administrator login credentials to access content management features.</p>
+                    <p data-key="admin-intro-2">In a real application, this would link to a secure login page where you can manage job updates, schemes, results, and other website content.</p>
+                    <a href="#" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition duration-300 ease-in-out mt-4" data-key="admin-login-button">Go to Admin Login (Placeholder)</a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-8">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p data-key="footer-copyright">&copy; 2024 FATAFAT JOBS. All rights reserved. | Designed with ❤️ for Public Information</p>
+            <p class="mt-1" data-key="footer-support">For 24/7 Support, Email: <a href="mailto:ashishyadav62064c@gmail.com" class="text-blue-300 hover:underline">ashishyadav62064c@gmail.com</a></p>
+            <div class="flex justify-center space-x-4 mt-2">
+                <a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out" data-key="footer-privacy">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out" data-key="footer-disclaimer">Disclaimer</a>
+                <a href="#" class="hover:text-blue-400 transition duration-300 ease-in-out" data-key="footer-contact">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language translation data
+        const translations = {
+            en: {
+                "main-title": "FATAFAT JOBS", // This will now be the text next to the logo
+                "nav-jobs": "Jobs",
+                "nav-schemes": "Schemes",
+                "nav-results": "Results",
+                "nav-admit-cards": "Admit Cards",
+                "nav-admission": "Admissions",
+                "nav-scholarships": "Scholarships",
+                "nav-more": "More",
+                "search-placeholder": "Search for jobs, schemes, results...",
+                "jobs-title": "Latest Job Updates",
+                "jobs-intro": "Below are illustrative job updates. For comprehensive and real-time notifications across all states and union territories and central government, please refer to official government websites like National Career Service, FreeJobAlert.com, or SarkariResult.com. To apply, click on the links below and replace the placeholder URLs with the actual application form links from the official notifications.",
+                "job-ssc-cgl": "SSC CGL 2024 Notification Released",
+                "job-railways-groupd": "Indian Railways Group D Recruitment 2024",
+                "job-upsc-cse": "UPSC Civil Services Exam 2024 Application",
+                "job-bank-po": "Bank PO/Clerk Vacancies in SBI & PNB",
+                "job-police-constable": "Police Constable Recruitment - State Wise",
+                "summarizer-title": "Job Description Summarizer ✨",
+                "summarizer-placeholder": "Paste a job description here to get a quick summary...",
+                "summarizer-button": "Summarize Job Description ✨",
+                "summary-label": "Summary:",
+                "loading-text": "Generating summary...",
+                "error-message": "Error: Could not generate summary. Please try again.",
+                "schemes-title": "Government Schemes",
+                "schemes-intro": "Below are illustrative government schemes. For a comprehensive list and detailed information on central and state and union territories government schemes, including eligibility and application processes, please visit official portals like myScheme.gov.in or JanSamarth.in. Click on the links below to find more information or the application process on the respective official sites.",
+                "scheme-pmjdy": "Pradhan Mantri Jan Dhan Yojana (PMJDY)",
+                "scheme-pmjay": "Ayushman Bharat Pradhan Mantri Jan Arogya Yojana (PMJAY)",
+                "scheme-pmay": "Pradhan Mantri Awas Yojana (PMAY)",
+                "scheme-ssy": "Sukanya Samriddhi Yojana (SSY)",
+                "scheme-apy": "Atal Pension Yojana (APY)",
+                "results-title": "Latest Results",
+                "result-upsc-mains": "UPSC Civil Services Mains Result 2023",
+                "result-ssc-gd": "SSC GD Constable Final Result 2023",
+                "result-ibps-po": "IBPS PO XI Final Result",
+                "result-neet-ug": "NEET UG 2024 Result Declared",
+                "result-railway-ntpc": "Railway NTPC CBT-2 Result",
+                "admit-cards-title": "Admit Cards",
+                "admit-ssc-chsl": "SSC CHSL 2024 Tier I Admit Card",
+                "admit-upsc-nda": "UPSC NDA I 2024 Admit Card",
+                "admit-ctet-july": "CTET July 2024 Admit Card",
+                "admit-jee-main": "JEE Main 2024 Session 2 Admit Card",
+                "admit-uptet": "UPTET 2024 Admit Card",
+                "admission-title": "Admission Notifications",
+                "admission-intro": "Find the latest updates on university admissions, entrance exams, and application deadlines across various educational institutions. Click on the links below and replace the placeholder URLs with the actual notification or application links from the official sources.",
+                "admission-jee-advanced": "JEE Advanced 2024 Application Open",
+                "admission-du-ug": "Delhi University UG Admissions 2024 Started",
+                "admission-ignou": "IGNOU July 2024 Session Admission",
+                "admission-state-cet": "State CET 2024 Notification Released",
+                "admission-iim-cat": "IIM CAT 2024 Registration Begins",
+                "scholarship-title": "Scholarship Notifications",
+                "scholarship-intro": "Find the latest scholarship opportunities from central and all states and union territories governments. These include merit-based, need-based, and category-specific scholarships. For comprehensive details and application, refer to official portals like National Scholarship Portal or Buddy4Study (State Scholarships). Click on the links below and replace the placeholder URLs with the actual notification or application links from the official sources.",
+                "scholarship-nsp-pre": "NSP Pre-Matric Scholarship 2024-25",
+                "scholarship-nsp-post": "NSP Post-Matric Scholarship 2024-25",
+                "scholarship-state-xyz": "State-Specific Scholarship (e.g., UP, MP, Punjab)",
+                "scholarship-ugc": "UGC Scholarship Schemes 2024",
+                "scholarship-minority": "Minority Affairs Scholarship 2024",
+                "important-links-title": "Important Links",
+                "link-official-portals": "Official Government Job Portals (e.g., NCS)",
+                "link-state-updates": "State-wise Job Updates (e.g., FreeJobAlert)",
+                "link-syllabus": "Exam Syllabus & Pattern",
+                "link-previous-papers": "Previous Year Question Papers",
+                "link-current-affairs": "Daily Current Affairs",
+                "admin-title": "Admin Panel (Login)",
+                "admin-intro-1": "This section would typically require administrator login credentials to access content management features.",
+                "admin-intro-2": "In a real application, this would link to a secure login page where you can manage job updates, schemes, results, and other website content.",
+                "admin-login-button": "Go to Admin Login (Placeholder)",
+                "footer-copyright": "&copy; 2024 FATAFAT JOBS. All rights reserved. | Designed with ❤️ for Public Information",
+                "footer-support": "For 24/7 Support, Email: ashishyadav62064c@gmail.com",
+                "footer-privacy": "Privacy Policy",
+                "footer-disclaimer": "Disclaimer",
+                "footer-contact": "Contact Us",
+                "new-badge": "NEW"
+            },
+            hi: {
+                "main-title": "फटाफट नौकरियां", // Text next to the logo
+                "nav-jobs": "नौकरियां",
+                "nav-schemes": "योजनाएं",
+                "nav-results": "परिणाम",
+                "nav-admit-cards": "एडमिट कार्ड",
+                "nav-admission": "प्रवेश",
+                "nav-scholarships": "छात्रवृत्तियां",
+                "nav-more": "और",
+                "search-placeholder": "नौकरियां, योजनाएं, परिणाम खोजें...",
+                "jobs-title": "नवीनतम नौकरी अपडेट",
+                "jobs-intro": "नीचे नौकरी के उदाहरण अपडेट दिए गए हैं। सभी राज्यों और केंद्र शासित प्रदेशों और केंद्र सरकार के व्यापक और वास्तविक समय के नोटिफिकेशन के लिए, कृपया आधिकारिक सरकारी वेबसाइटों जैसे नेशनल करियर सर्विस, FreeJobAlert.com, या SarkariResult.com पर जाएं। आवेदन करने के लिए, नीचे दिए गए लिंक पर क्लिक करें और प्लेसहोल्डर URL को आधिकारिक नोटिफिकेशन से वास्तविक आवेदन फॉर्म लिंक से बदलें।",
+                "job-ssc-cgl": "एसएससी सीजीएल 2024 अधिसूचना जारी",
+                "job-railways-groupd": "भारतीय रेलवे ग्रुप डी भर्ती 2024",
+                "job-upsc-cse": "यूपीएससी सिविल सेवा परीक्षा 2024 आवेदन",
+                "job-bank-po": "एसबीआई और पीएनबी में बैंक पीओ/क्लर्क रिक्तियां",
+                "job-police-constable": "पुलिस कांस्टेबल भर्ती - राज्यवार",
+                "summarizer-title": "नौकरी विवरण सारांशकर्ता ✨",
+                "summarizer-placeholder": "त्वरित सारांश प्राप्त करने के लिए यहां नौकरी का विवरण पेस्ट करें...",
+                "summarizer-button": "नौकरी विवरण का सारांश करें ✨",
+                "summary-label": "सारांश:",
+                "loading-text": "सारांश उत्पन्न हो रहा है...",
+                "error-message": "त्रुटि: सारांश उत्पन्न नहीं किया जा सका। कृपया पुनः प्रयास करें।",
+                "schemes-title": "सरकारी योजनाएं",
+                "schemes-intro": "नीचे सरकारी योजनाओं के उदाहरण दिए गए हैं। केंद्र और राज्य और केंद्र शासित प्रदेशों की सरकारी योजनाओं पर व्यापक सूची और विस्तृत जानकारी, पात्रता और आवेदन प्रक्रियाओं सहित, के लिए कृपया myScheme.gov.in या JanSamarth.in जैसे आधिकारिक पोर्टलों पर जाएं। अधिक जानकारी या आवेदन प्रक्रिया के लिए नीचे दिए गए लिंक पर क्लिक करें।",
+                "scheme-pmjdy": "प्रधानमंत्री जन धन योजना (पीएमजेडीवाई)",
+                "scheme-pmjay": "आयुष्मान भारत प्रधानमंत्री जन आरोग्य योजना (पीएमजेएवाई)",
+                "scheme-pmay": "प्रधानमंत्री आवास योजना (पीएमएवाई)",
+                "scheme-ssy": "सुकन्या समृद्धि योजना (एसएसवाई)",
+                "scheme-apy": "अटल पेंशन योजना (एपीवाई)",
+                "results-title": "नवीनतम परिणाम",
+                "result-upsc-mains": "यूपीएससी सिविल सेवा मुख्य परिणाम 2023",
+                "result-ssc-gd": "एसएससी जीडी कांस्टेबल अंतिम परिणाम 2023",
+                "result-ibps-po": "आईबीपीएस पीओ XI अंतिम परिणाम",
+                "result-neet-ug": "नीट यूजी 2024 परिणाम घोषित",
+                "result-railway-ntpc": "रेलवे एनटीपीसी सीबीटी-2 परिणाम",
+                "admit-cards-title": "एडमिट कार्ड",
+                "admit-ssc-chsl": "एसएससी सीएचएसएल 2024 टियर I एडमिट कार्ड",
+                "admit-upsc-nda": "यूपीएससी एनडीए I 2024 एडमिट कार्ड",
+                "admit-ctet-july": "सीटीईटी जुलाई 2024 एडमिट कार्ड",
+                "admit-jee-main": "जेईई मेन 2024 सत्र 2 एडमिट कार्ड",
+                "admit-uptet": "यूपीटीईटी 2024 एडमिट कार्ड",
+                "admission-title": "प्रवेश सूचनाएं",
+                "admission-intro": "विभिन्न शैक्षणिक संस्थानों में विश्वविद्यालय प्रवेश, प्रवेश परीक्षा और आवेदन की अंतिम तिथियों पर नवीनतम अपडेट प्राप्त करें। वास्तविक अधिसूचना या आवेदन लिंक के लिए नीचे दिए गए लिंक पर क्लिक करें और प्लेसहोल्डर URL को आधिकारिक स्रोतों से बदलें।",
+                "admission-jee-advanced": "जेईई एडवांस्ड 2024 आवेदन खुला",
+                "admission-du-ug": "दिल्ली विश्वविद्यालय यूजी प्रवेश 2024 शुरू",
+                "admission-ignou": "इग्नू जुलाई 2024 सत्र प्रवेश",
+                "admission-state-cet": "राज्य सीईटी 2024 अधिसूचना जारी",
+                "admission-iim-cat": "आईआईएम कैट 2024 पंजीकरण शुरू",
+                "scholarship-title": "छात्रवृत्ति सूचनाएं",
+                "scholarship-intro": "केंद्र और सभी राज्यों और केंद्र शासित प्रदेशों की सरकारों से नवीनतम छात्रवृत्ति के अवसर खोजें। इनमें योग्यता-आधारित, आवश्यकता-आधारित और श्रेणी-विशिष्ट छात्रवृत्तियां शामिल हैं। व्यापक विवरण और आवेदन के लिए, नेशनल स्कॉलरशिप पोर्टल या बडी4स्टडी (राज्य छात्रवृत्ति) जैसे आधिकारिक पोर्टलों पर जाएं। नीचे दिए गए लिंक पर क्लिक करें और प्लेसहोल्डर URL को आधिकारिक स्रोतों से वास्तविक अधिसूचना या आवेदन लिंक से बदलें।",
+                "scholarship-nsp-pre": "एनएसपी प्री-मैट्रिक छात्रवृत्ति 2024-25",
+                "scholarship-nsp-post": "एनएसपी पोस्ट-मैट्रिक छात्रवृत्ति 2024-25",
+                "scholarship-state-xyz": "राज्य-विशिष्ट छात्रवृत्ति (जैसे, यूपी, एमपी, पंजाब)",
+                "scholarship-ugc": "यूजीसी छात्रवृत्ति योजनाएं 2024",
+                "scholarship-minority": "अल्पसंख्यक मामलों की छात्रवृत्ति 2024",
+                "important-links-title": "महत्वपूर्ण लिंक",
+                "link-official-portals": "आधिकारिक सरकारी नौकरी पोर्टल (जैसे, एनसीएस)",
+                "link-state-updates": "राज्यवार नौकरी अपडेट (जैसे, FreeJobAlert)",
+                "link-syllabus": "परीक्षा पाठ्यक्रम और पैटर्न",
+                "link-previous-papers": "पिछले वर्ष के प्रश्न पत्र",
+                "link-current-affairs": "दैनिक करेंट अफेयर्स",
+                "admin-title": "एडमिन पैनल (लॉगिन)",
+                "admin-intro-1": "इस अनुभाग के लिए आमतौर पर सामग्री प्रबंधन सुविधाओं तक पहुंचने के लिए प्रशासक लॉगिन क्रेडेंशियल की आवश्यकता होगी।",
+                "admin-intro-2": "एक वास्तविक एप्लिकेशन में, यह एक सुरक्षित लॉगिन पृष्ठ से लिंक होगा जहां आप नौकरी अपडेट, योजनाओं, परिणामों और अन्य वेबसाइट सामग्री का प्रबंधन कर सकते हैं।",
+                "admin-login-button": "एडमिन लॉगिन पर जाएं (प्लेसहोल्डर)",
+                "footer-copyright": "&copy; 2024 फटाफट नौकरियां। सर्वाधिकार सुरक्षित। | सार्वजनिक जानकारी के लिए ❤️ से डिज़ाइन किया गया",
+                "footer-support": "24/7 सहायता के लिए, ईमेल: ashishyadav62064c@gmail.com",
+                "footer-privacy": "गोपनीयता नीति",
+                "footer-disclaimer": "अस्वीकरण",
+                "footer-contact": "हमसे संपर्क करें",
+                "new-badge": "नया"
+            },
+            pa: {
+                "main-title": "ਫਟਾਫਟ ਨੌਕਰੀਆਂ", // Text next to the logo
+                "nav-jobs": "ਨੌਕਰੀਆਂ",
+                "nav-schemes": "ਯੋਜਨਾਵਾਂ",
+                "nav-results": "ਨਤੀਜੇ",
+                "nav-admit-cards": "ਐਡਮਿਟ ਕਾਰਡ",
+                "nav-admission": "ਦਾਖਲੇ",
+                "nav-scholarships": "ਸਕਾਲਰਸ਼ਿਪਾਂ",
+                "nav-more": "ਹੋਰ",
+                "search-placeholder": "ਨੌਕਰੀਆਂ, ਯੋਜਨਾਵਾਂ, ਨਤੀਜੇ ਲੱਭੋ...",
+                "jobs-title": "ਤਾਜ਼ਾ ਨੌਕਰੀ ਅਪਡੇਟਸ",
+                "jobs-intro": "ਹੇਠਾਂ ਨੌਕਰੀ ਦੇ ਉਦਾਹਰਨ ਅਪਡੇਟਸ ਦਿੱਤੇ ਗਏ ਹਨ। ਸਾਰੇ ਰਾਜਾਂ ਅਤੇ ਕੇਂਦਰ ਸ਼ਾਸਿਤ ਪ੍ਰਦੇਸ਼ਾਂ ਅਤੇ ਕੇਂਦਰ ਸਰਕਾਰ ਦੇ ਵਿਆਪਕ ਅਤੇ ਅਸਲ-ਸਮੇਂ ਦੇ ਨੋਟੀਫਿਕੇਸ਼ਨਾਂ ਲਈ, ਕਿਰਪਾ ਕਰਕੇ ਅਧਿਕਾਰਤ ਸਰਕਾਰੀ ਵੈੱਬਸਾਈਟਾਂ ਜਿਵੇਂ ਕਿ ਨੈਸ਼ਨਲ ਕਰੀਅਰ ਸਰਵਿਸ, FreeJobAlert.com, ਜਾਂ SarkariResult.com ਵੇਖੋ। ਅਰਜ਼ੀ ਦੇਣ ਲਈ, ਹੇਠਾਂ ਦਿੱਤੇ ਲਿੰਕਾਂ 'ਤੇ ਕਲਿੱਕ ਕਰੋ ਅਤੇ ਪਲੇਸਹੋਲਡਰ URL ਨੂੰ ਅਧਿਕਾਰਤ ਨੋਟੀਫਿਕੇਸ਼ਨਾਂ ਤੋਂ ਅਸਲ ਅਰਜ਼ੀ ਫਾਰਮ ਲਿੰਕਾਂ ਨਾਲ ਬਦਲੋ।",
+                "job-ssc-cgl": "ਐਸਐਸਸੀ ਸੀਜੀਐਲ 2024 ਨੋਟੀਫਿਕੇਸ਼ਨ ਜਾਰੀ",
+                "job-railways-groupd": "ਭਾਰਤੀ ਰੇਲਵੇ ਗਰੁੱਪ ਡੀ ਭਰਤੀ 2024",
+                "job-upsc-cse": "ਯੂਪੀਐਸਸੀ ਸਿਵਲ ਸਰਵਿਸਿਜ਼ ਪ੍ਰੀਖਿਆ 2024 ਅਰਜ਼ੀ",
+                "job-bank-po": "ਐਸਬੀਆਈ ਅਤੇ ਪੀਐਨਬੀ ਵਿੱਚ ਬੈਂਕ ਪੀਓ/ਕਲਰਕ ਦੀਆਂ ਅਸਾਮੀਆਂ",
+                "job-police-constable": "ਪੁਲਿਸ ਕਾਂਸਟੇਬਲ ਭਰਤੀ - ਰਾਜ ਅਨੁਸਾਰ",
+                "summarizer-title": "ਨੌਕਰੀ ਵੇਰਵਾ ਸੰਖੇਪਕਰਤਾ ✨",
+                "summarizer-placeholder": "ਇੱਕ ਤੇਜ਼ ਸਾਰ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ ਇੱਥੇ ਨੌਕਰੀ ਦਾ ਵੇਰਵਾ ਪੇਸਟ ਕਰੋ...",
+                "summarizer-button": "ਨੌਕਰੀ ਵੇਰਵੇ ਦਾ ਸਾਰ ਕਰੋ ✨",
+                "summary-label": "ਸਾਰ:",
+                "loading-text": "ਸਾਰ ਤਿਆਰ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...",
+                "error-message": "ਗਲਤੀ: ਸਾਰ ਤਿਆਰ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਿਆ। ਕਿਰਪਾ ਕਰਕੇ ਦੁਬਾਰਾ ਕੋਸ਼ਿਸ਼ ਕਰੋ।",
+                "schemes-title": "ਸਰਕਾਰੀ ਯੋਜਨਾਵਾਂ",
+                "schemes-intro": "ਹੇਠਾਂ ਸਰਕਾਰੀ ਯੋਜਨਾਵਾਂ ਦੇ ਉਦਾਹਰਨ ਦਿੱਤੇ ਗਏ ਹਨ। ਕੇਂਦਰ ਅਤੇ ਰਾਜ ਅਤੇ ਕੇਂਦਰ ਸ਼ਾਸਿਤ ਪ੍ਰਦੇਸ਼ਾਂ ਦੀਆਂ ਸਰਕਾਰੀ ਯੋਜਨਾਵਾਂ ਬਾਰੇ ਵਿਆਪਕ ਸੂਚੀ ਅਤੇ ਵਿਸਤ੍ਰਿਤ ਜਾਣਕਾਰੀ, ਯੋਗਤਾ ਅਤੇ ਅਰਜ਼ੀ ਪ੍ਰਕਿਰਿਆਵਾਂ ਸਮੇਤ, ਲਈ ਕਿਰਪਾ ਕਰਕੇ myScheme.gov.in ਜਾਂ JanSamarth.in ਵਰਗੇ ਅਧਿਕਾਰਤ ਪੋਰਟਲਾਂ 'ਤੇ ਜਾਓ। ਵਧੇਰੇ ਜਾਣਕਾਰੀ ਜਾਂ ਅਰਜ਼ੀ ਪ੍ਰਕਿਰਿਆ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਲਿੰਕਾਂ 'ਤੇ ਕਲਿੱਕ ਕਰੋ।",
+                "scheme-pmjdy": "ਪ੍ਰਧਾਨ ਮੰਤਰੀ ਜਨ ਧਨ ਯੋਜਨਾ (ਪੀਐਮਜੇਡੀਵਾਈ)",
+                "scheme-pmjay": "ਆਯੁਸ਼ਮਾਨ ਭਾਰਤ ਪ੍ਰਧਾਨ ਮੰਤਰੀ ਜਨ ਆਰੋਗਿਆ ਯੋਜਨਾ (ਪੀਐਮਜੇਏਵਾਈ)",
+                "scheme-pmay": "ਪ੍ਰਧਾਨ ਮੰਤਰੀ ਆਵਾਸ ਯੋਜਨਾ (ਪੀਐਮਏਵਾਈ)",
+                "scheme-ssy": "ਸੁਕੰਨਿਆ ਸਮ੍ਰਿੱਧੀ ਯੋਜਨਾ (ਐਸਐਸਵਾਈ)",
+                "scheme-apy": "ਅਟਲ ਪੈਨਸ਼ਨ ਯੋਜਨਾ (ਏਪੀਵਾਈ)",
+                "results-title": "ਤਾਜ਼ਾ ਨਤੀਜੇ",
+                "result-upsc-mains": "ਯੂਪੀਐਸਸੀ ਸਿਵਲ ਸਰਵਿਸਿਜ਼ ਮੇਨਜ਼ ਨਤੀਜਾ 2023",
+                "result-ssc-gd": "ਐਸਐਸਸੀ ਜੀਡੀ ਕਾਂਸਟੇਬਲ ਅੰਤਿਮ ਨਤੀਜਾ 2023",
+                "result-ibps-po": "ਆਈਬੀਪੀਐਸ ਪੀਓ XI ਅੰਤਿਮ ਨਤੀਜਾ",
+                "result-neet-ug": "ਨੀਟ ਯੂਜੀ 2024 ਨਤੀਜਾ ਘੋਸ਼ਿਤ",
+                "result-railway-ntpc": "ਰੇਲਵੇ ਐਨਟੀਪੀਸੀ ਸੀਬੀਟੀ-2 ਨਤੀਜਾ",
+                "admit-cards-title": "ਐਡਮਿਟ ਕਾਰਡ",
+                "admit-ssc-chsl": "ਐਸਐਸਸੀ ਸੀਐਚਐਸਐਲ 2024 ਟੀਅਰ I ਐਡਮਿਟ ਕਾਰਡ",
+                "admit-upsc-nda": "ਯੂਪੀਐਸਸੀ ਐਨਡੀਏ I 2024 ਐਡਮਿਟ ਕਾਰਡ",
+                "admit-ctet-july": "ਸੀਟੀਈਟੀ ਜੁਲਾਈ 2024 ਐਡਮਿਟ ਕਾਰਡ",
+                "admit-jee-main": "ਜੇਈਈ ਮੇਨ 2024 ਸੈਸ਼ਨ 2 ਐਡਮਿਟ ਕਾਰਡ",
+                "admit-uptet": "ਯੂਪੀਟੀਈਟੀ 2024 ਐਡਮਿਟ ਕਾਰਡ",
+                "admission-title": "ਦਾਖਲਾ ਸੂਚਨਾਵਾਂ",
+                "admission-intro": "ਵੱਖ-ਵੱਖ ਵਿਦਿਅਕ ਸੰਸਥਾਵਾਂ ਵਿੱਚ ਯੂਨੀਵਰਸਿਟੀ ਦਾਖਲੇ, ਪ੍ਰਵੇਸ਼ ਪ੍ਰੀਖਿਆਵਾਂ, ਅਤੇ ਅਰਜ਼ੀ ਦੀਆਂ ਅੰਤਮ ਤਾਰੀਖਾਂ ਬਾਰੇ ਨਵੀਨਤਮ ਅਪਡੇਟਸ ਲੱਭੋ। ਅਸਲ ਨੋਟੀਫਿਕੇਸ਼ਨ ਜਾਂ ਅਰਜ਼ੀ ਲਿੰਕਾਂ ਲਈ ਹੇਠਾਂ ਦਿੱਤੇ ਲਿੰਕਾਂ 'ਤੇ ਕਲਿੱਕ ਕਰੋ ਅਤੇ ਪਲੇਸਹੋਲਡਰ URL ਨੂੰ ਅਧਿਕਾਰਤ ਸਰੋਤਾਂ ਤੋਂ ਬਦਲੋ।",
+                "admission-jee-advanced": "ਜੇਈਈ ਐਡਵਾਂਸਡ 2024 ਅਰਜ਼ੀ ਖੁੱਲ੍ਹੀ",
+                "admission-du-ug": "ਦਿੱਲੀ ਯੂਨੀਵਰਸਿਟੀ ਯੂਜੀ ਦਾਖਲੇ 2024 ਸ਼ੁਰੂ ਹੋਏ",
+                "admission-ignou": "ਇਗਨੂ ਜੁਲਾਈ 2024 ਸੈਸ਼ਨ ਦਾਖਲਾ",
+                "admission-state-cet": "ਰਾਜ ਸੀਈਟੀ 2024 ਨੋਟੀਫਿਕੇਸ਼ਨ ਜਾਰੀ",
+                "admission-iim-cat": "ਆਈਆਈਐਮ ਕੈਟ 2024 ਰਜਿਸਟ੍ਰੇਸ਼ਨ ਸ਼ੁਰੂ",
+                "scholarship-title": "ਸਕਾਲਰਸ਼ਿਪ ਸੂਚਨਾਵਾਂ",
+                "scholarship-intro": "ਕੇਂਦਰ ਅਤੇ ਸਾਰੇ ਰਾਜਾਂ ਅਤੇ ਕੇਂਦਰ ਸ਼ਾਸਿਤ ਪ੍ਰਦੇਸ਼ਾਂ ਦੀਆਂ ਸਰਕਾਰਾਂ ਤੋਂ ਨਵੀਨਤਮ ਸਕਾਲਰਸ਼ਿਪ ਦੇ ਮੌਕੇ ਲੱਭੋ। ਇਹਨਾਂ ਵਿੱਚ ਯੋਗਤਾ-ਆਧਾਰਿਤ, ਲੋੜ-ਆਧਾਰਿਤ, ਅਤੇ ਸ਼੍ਰੇਣੀ-ਵਿਸ਼ੇਸ਼ ਸਕਾਲਰਸ਼ਿਪਾਂ ਸ਼ਾਮਲ ਹਨ। ਵਿਆਪਕ ਵੇਰਵਿਆਂ ਅਤੇ ਅਰਜ਼ੀ ਲਈ, ਨੈਸ਼ਨਲ ਸਕਾਲਰਸ਼ਿਪ ਪੋਰਟਲ ਜਾਂ ਬੱਡੀ4ਸਟੱਡੀ (ਰਾਜ ਸਕਾਲਰਸ਼ਿਪਾਂ) ਵਰਗੇ ਅਧਿਕਾਰਤ ਪੋਰਟਲਾਂ 'ਤੇ ਜਾਓ। ਹੇਠਾਂ ਦਿੱਤੇ ਲਿੰਕਾਂ 'ਤੇ ਕਲਿੱਕ ਕਰੋ ਅਤੇ ਪਲੇਸਹੋਲਡਰ URL ਨੂੰ ਅਧਿਕਾਰਤ ਸਰੋਤਾਂ ਤੋਂ ਅਸਲ ਨੋਟੀਫਿਕੇਸ਼ਨ ਜਾਂ ਅਰਜ਼ੀ ਲਿੰਕਾਂ ਨਾਲ ਬਦਲੋ।",
+                "scholarship-nsp-pre": "ਐਨਐਸਪੀ ਪ੍ਰੀ-ਮੈਟ੍ਰਿਕ ਸਕਾਲਰਸ਼ਿਪ 2024-25",
+                "scholarship-nsp-post": "ਐਨਐਸਪੀ ਪੋਸਟ-ਮੈਟ੍ਰਿਕ ਸਕਾਲਰਸ਼ਿਪ 2024-25",
+                "scholarship-state-xyz": "ਰਾਜ-ਵਿਸ਼ੇਸ਼ ਸਕਾਲਰਸ਼ਿਪ (ਜਿਵੇਂ, ਯੂਪੀ, ਐਮਪੀ, ਪੰਜਾਬ)",
+                "scholarship-ugc": "ਯੂਜੀਸੀ ਸਕਾਲਰਸ਼ਿਪ ਯੋਜਨਾਵਾਂ 2024",
+                "scholarship-minority": "ਘੱਟ ਗਿਣਤੀ ਮਾਮਲੇ ਸਕਾਲਰਸ਼ਿਪ 2024",
+                "important-links-title": "ਮਹੱਤਵਪੂਰਨ ਲਿੰਕ",
+                "link-official-portals": "ਅਧਿਕਾਰਤ ਸਰਕਾਰੀ ਨੌਕਰੀ ਪੋਰਟਲ (ਜਿਵੇਂ, ਐਨਸੀਐਸ)",
+                "link-state-updates": "ਰਾਜ-ਅਨੁਸਾਰ ਨੌਕਰੀ ਅਪਡੇਟਸ (ਜਿਵੇਂ, FreeJobAlert)",
+                "link-syllabus": "ਪ੍ਰੀਖਿਆ ਸਿਲੇਬਸ ਅਤੇ ਪੈਟਰਨ",
+                "link-previous-papers": "ਪਿਛਲੇ ਸਾਲ ਦੇ ਪ੍ਰਸ਼ਨ ਪੱਤਰ",
+                "link-current-affairs": "ਰੋਜ਼ਾਨਾ ਵਰਤਮਾਨ ਮਾਮਲੇ",
+                "admin-title": "ਐਡਮਿਨ ਪੈਨਲ (ਲੌਗਇਨ)",
+                "admin-intro-1": "ਇਸ ਭਾਗ ਲਈ ਆਮ ਤੌਰ 'ਤੇ ਸਮੱਗਰੀ ਪ੍ਰਬੰਧਨ ਵਿਸ਼ੇਸ਼ਤਾਵਾਂ ਤੱਕ ਪਹੁੰਚ ਕਰਨ ਲਈ ਪ੍ਰਸ਼ਾਸਕ ਲੌਗਇਨ ਪ੍ਰਮਾਣ ਪੱਤਰਾਂ ਦੀ ਲੋੜ ਹੋਵੇਗੀ।",
+                "admin-intro-2": "ਇੱਕ ਅਸਲੀ ਐਪਲੀਕੇਸ਼ਨ ਵਿੱਚ, ਇਹ ਇੱਕ ਸੁਰੱਖਿਅਤ ਲੌਗਇਨ ਪੰਨੇ ਨਾਲ ਜੁੜਿਆ ਹੋਵੇਗਾ ਜਿੱਥੇ ਤੁਸੀਂ ਨੌਕਰੀ ਅਪਡੇਟਸ, ਯੋਜਨਾਵਾਂ, ਨਤੀਜਿਆਂ ਅਤੇ ਹੋਰ ਵੈੱਬਸਾਈਟ ਸਮੱਗਰੀ ਦਾ ਪ੍ਰਬੰਧਨ ਕਰ ਸਕਦੇ ਹੋ।",
+                "admin-login-button": "ਐਡਮਿਨ ਲੌਗਇਨ 'ਤੇ ਜਾਓ (ਪਲੇਸਹੋਲਡਰ)",
+                "footer-copyright": "&copy; 2024 ਫਟਾਫਟ ਨੌਕਰੀਆਂ। ਸਾਰੇ ਅਧਿਕਾਰ ਰਾਖਵੇਂ ਹਨ। | ਜਨਤਕ ਜਾਣਕਾਰੀ ਲਈ ❤️ ਨਾਲ ਡਿਜ਼ਾਈਨ ਕੀਤਾ ਗਿਆ",
+                "footer-support": "24/7 ਸਹਾਇਤਾ ਲਈ, ਈਮੇਲ: ashishyadav62064c@gmail.com",
+                "footer-privacy": "ਗੋਪਨੀਯਤਾ ਨੀਤੀ",
+                "footer-disclaimer": "ਬੇਦਾਅਵਾ",
+                "footer-contact": "ਸਾਡੇ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
+                "new-badge": "ਨਵਾਂ"
+            },
+            bn: { /* Bengali Translations (Placeholders - please replace with accurate translations) */
+                "main-title": "ফটাফট চাকরি",
+                "nav-jobs": "চাকরি",
+                "nav-schemes": "স্কিম",
+                "nav-results": "ফলাফল",
+                "nav-admit-cards": "অ্যাডমিট কার্ড",
+                "nav-admission": "ভর্তি",
+                "nav-scholarships": "স্কলারশিপ",
+                "nav-more": "আরও",
+                "search-placeholder": "চাকরি, স্কিম, ফলাফল খুঁজুন...",
+                "jobs-title": "সর্বশেষ চাকরির আপডেট",
+                "jobs-intro": "নীচে চাকরির উদাহরণমূলক আপডেট দেওয়া হল। সমস্ত রাজ্য এবং কেন্দ্রশাসিত অঞ্চল এবং কেন্দ্রীয় সরকারের ব্যাপক এবং রিয়েল-টাইম বিজ্ঞপ্তির জন্য, অনুগ্রহ করে ন্যাশনাল ক্যারিয়ার সার্ভিস, FreeJobAlert.com, বা SarkariResult.com-এর মতো অফিসিয়াল সরকারি ওয়েবসাইটগুলি দেখুন। আবেদন করতে, নীচের লিঙ্কগুলিতে ক্লিক করুন এবং প্লেসহোল্ডার URL গুলিকে অফিসিয়াল বিজ্ঞপ্তি থেকে আসল আবেদন ফর্ম লিঙ্ক দিয়ে প্রতিস্থাপন করুন।",
+                "job-ssc-cgl": "এসএসসি সিজিএল 2024 বিজ্ঞপ্তি প্রকাশিত",
+                "job-railways-groupd": "ভারতীয় রেলওয়ে গ্রুপ ডি নিয়োগ 2024",
+                "job-upsc-cse": "ইউপিএসসি সিভিল সার্ভিসেস পরীক্ষা 2024 আবেদন",
+                "job-bank-po": "এসবিআই এবং পিএনবিতে ব্যাংক পিও/ক্লার্ক শূন্যপদ",
+                "job-police-constable": "পুলিশ কনস্টেবল নিয়োগ - রাজ্যভিত্তিক",
+                "summarizer-title": "চাকরির বিবরণ সারাংশকারী ✨",
+                "summarizer-placeholder": "দ্রুত সারাংশ পেতে এখানে চাকরির বিবরণ পেস্ট করুন...",
+                "summarizer-button": "চাকরির বিবরণ সারাংশ করুন ✨",
+                "summary-label": "সারাংশ:",
+                "loading-text": "সারাংশ তৈরি হচ্ছে...",
+                "error-message": "ত্রুটি: সারাংশ তৈরি করা যায়নি। অনুগ্রহ করে আবার চেষ্টা করুন।",
+                "schemes-title": "সরকারি স্কিম",
+                "schemes-intro": "নীচে সরকারি স্কিমগুলির উদাহরণ দেওয়া হল। কেন্দ্রীয় এবং রাজ্য ও কেন্দ্রশাসিত অঞ্চলের সরকারি স্কিমগুলির একটি বিস্তারিত তালিকা এবং বিস্তারিত তথ্যের জন্য, যোগ্যতা এবং আবেদন প্রক্রিয়া সহ, অনুগ্রহ করে myScheme.gov.in বা JanSamarth.in-এর মতো অফিসিয়াল পোর্টালগুলি দেখুন। আরও তথ্য বা আবেদন প্রক্রিয়ার জন্য নীচের লিঙ্কগুলিতে ক্লিক করুন।",
+                "scheme-pmjdy": "প্রধানমন্ত্রী জন ধন যোজনা (পিএমজেডিওয়াই)",
+                "scheme-pmjay": "আয়ুষ্মান ভারত প্রধানমন্ত্রী জন আরোগ্য যোজনা (পিএমজেএওয়াই)",
+                "scheme-pmay": "প্রধানমন্ত্রী আবাস যোজনা (পিএমএওয়াই)",
+                "scheme-ssy": "সুকন্যা সমৃদ্ধি যোজনা (এসএসওয়াই)",
+                "scheme-apy": "অটল পেনশন যোজনা (এপিওয়াই)",
+                "results-title": "সর্বশেষ ফলাফল",
+                "result-upsc-mains": "ইউপিএসসি সিভিল সার্ভিসেস মেইনস ফলাফল 2023",
+                "result-ssc-gd": "এসএসসি জিডি কনস্টেবল চূড়ান্ত ফলাফল 2023",
+                "result-ibps-po": "আইবিপিএস পিও XI চূড়ান্ত ফলাফল",
+                "result-neet-ug": "নিট ইউজি 2024 ফলাফল ঘোষিত",
+                "result-railway-ntpc": "রেলওয়ে এনটিপিসি সিবিটি-2 ফলাফল",
+                "admit-cards-title": "অ্যাডমিট কার্ড",
+                "admit-ssc-chsl": "এসএসসি সিএইচএসএল 2024 টিয়ার I অ্যাডমিট কার্ড",
+                "admit-upsc-nda": "ইউপিএসসি এনডিএ I 2024 অ্যাডমিট কার্ড",
+                "admit-ctet-july": "সিটেট জুলাই 2024 অ্যাডমিট কার্ড",
+                "admit-jee-main": "জেইই মেইন 2024 সেশন 2 অ্যাডমিট কার্ড",
+                "admit-uptet": "ইউপিটিইটি 2024 অ্যাডমিট কার্ড",
+                "admission-title": "ভর্তির বিজ্ঞপ্তি",
+                "admission-intro": "বিভিন্ন শিক্ষা প্রতিষ্ঠানে বিশ্ববিদ্যালয় ভর্তি, প্রবেশিকা পরীক্ষা এবং আবেদনের শেষ তারিখের সর্বশেষ আপডেট খুঁজুন। প্রকৃত বিজ্ঞপ্তি বা আবেদন লিঙ্কের জন্য নীচের লিঙ্কগুলিতে ক্লিক করুন এবং প্লেসহোল্ডার URL গুলিকে অফিসিয়াল উত্স থেকে প্রতিস্থাপন করুন।",
+                "admission-jee-advanced": "জেইই অ্যাডভান্সড 2024 আবেদন খোলা",
+                "admission-du-ug": "দিল্লি বিশ্ববিদ্যালয় ইউজি ভর্তি 2024 শুরু হয়েছে",
+                "admission-ignou": "IGNOU জুলাই 2024 সেশন ভর্তি",
+                "admission-state-cet": "রাজ্য সিইটি 2024 বিজ্ঞপ্তি প্রকাশিত",
+                "admission-iim-cat": "আইআইএম ক্যাট 2024 নিবন্ধন শুরু",
+                "scholarship-title": "স্কলারশিপ বিজ্ঞপ্তি",
+                "scholarship-intro": "কেন্দ্র এবং সমস্ত রাজ্য এবং কেন্দ্রশাসিত অঞ্চলগুলির সরকার থেকে সর্বশেষ স্কলারশিপের সুযোগগুলি খুঁজুন। এর মধ্যে মেধা-ভিত্তিক, প্রয়োজন-ভিত্তিক এবং বিভাগ-নির্দিষ্ট স্কলারশিপ অন্তর্ভুক্ত। বিস্তারিত বিবরণ এবং আবেদনের জন্য, ন্যাশনাল স্কলারশিপ পোর্টাল বা বাডি4স্টাডি (রাজ্য স্কলারশিপ) এর মতো অফিসিয়াল পোর্টালগুলি দেখুন। নীচের লিঙ্কগুলিতে ক্লিক করুন এবং প্লেসহোল্ডার URL গুলিকে অফিসিয়াল উত্স থেকে আসল বিজ্ঞপ্তি বা আবেদন লিঙ্ক দিয়ে প্রতিস্থাপন করুন।",
+                "scholarship-nsp-pre": "এনএসপি প্রি-ম্যাট্রিক স্কলারশিপ 2024-25",
+                "scholarship-nsp-post": "এনএসপি পোস্ট-ম্যাট্রিক স্কলারশিপ 2024-25",
+                "scholarship-state-xyz": "রাজ্য-নির্দিষ্ট স্কলারশিপ (যেমন, ইউপি, এমপি, পাঞ্জাব)",
+                "scholarship-ugc": "ইউজিসি স্কলারশিপ স্কিম 2024",
+                "scholarship-minority": "সংখ্যালঘু বিষয়ক স্কলারশিপ 2024",
+                "important-links-title": "গুরুত্বপূর্ণ লিঙ্ক",
+                "link-official-portals": "অফিসিয়াল সরকারি চাকরির পোর্টাল (যেমন, এনসিএস)",
+                "link-state-updates": "রাজ্যভিত্তিক চাকরির আপডেট (যেমন, FreeJobAlert)",
+                "link-syllabus": "পরীক্ষার সিলেবাস ও প্যাটার্ন",
+                "link-previous-papers": "গত বছরের প্রশ্নপত্র",
+                "link-current-affairs": "দৈনিক কারেন্ট অ্যাফেয়ার্স",
+                "admin-title": "অ্যাডমিন প্যানেল (লগইন)",
+                "admin-intro-1": "এই বিভাগে সাধারণত কন্টেন্ট ম্যানেজমেন্ট বৈশিষ্ট্যগুলি অ্যাক্সেস করার জন্য প্রশাসক লগইন শংসাপত্রের প্রয়োজন হবে।",
+                "admin-intro-2": "একটি বাস্তব অ্যাপ্লিকেশনে, এটি একটি সুরক্ষিত লগইন পৃষ্ঠার সাথে লিঙ্ক করবে যেখানে আপনি চাকরির আপডেট, স্কিম, ফলাফল এবং অন্যান্য ওয়েবসাইট সামগ্রী পরিচালনা করতে পারবেন।",
+                "admin-login-button": "অ্যাডমিন লগইন-এ যান (প্লেসহোল্ডার)",
+                "footer-copyright": "&copy; 2024 ফটাফট চাকরি। সর্বস্বত্ব সংরক্ষিত। | জন তথ্য জন্য ❤️ দিয়ে ডিজাইন করা হয়েছে",
+                "footer-support": "24/7 সমর্থনের জন্য, ইমেল: ashishyadav62064c@gmail.com",
+                "footer-privacy": "গোপনীয়তা নীতি",
+                "footer-disclaimer": "অস্বীকৃতি",
+                "footer-contact": "যোগাযোগ করুন",
+                "new-badge": "নতুন"
+            },
+            mr: { /* Marathi Translations (Placeholders - please replace with accurate translations) */
+                "main-title": "फटाफट नोकऱ्या",
+                "nav-jobs": "नोकऱ्या",
+                "nav-schemes": "योजना",
+                "nav-results": "निकाल",
+                "nav-admit-cards": "प्रवेशपत्र",
+                "nav-admission": "प्रवेश",
+                "nav-scholarships": "शिष्यवृत्ती",
+                "nav-more": "अधिक",
+                "search-placeholder": "नोकऱ्या, योजना, निकाल शोधा...",
+                "jobs-title": "नवीनतम नोकरी अपडेट्स",
+                "jobs-intro": "खाली नोकरीचे प्रातिनिधिक अपडेट्स दिले आहेत. सर्व राज्ये आणि केंद्रशासित प्रदेश आणि केंद्र सरकारच्या सर्वसमावेशक आणि रिअल-टाइम सूचनांसाठी, कृपया नॅशनल करिअर सर्व्हिस, FreeJobAlert.com, किंवा SarkariResult.com यांसारख्या अधिकृत सरकारी वेबसाइट्सचा संदर्भ घ्या. अर्ज करण्यासाठी, खालील लिंक्सवर क्लिक करा आणि प्लेसहोल्डर URL अधिकृत सूचनांमधील वास्तविक अर्ज फॉर्म लिंक्सने बदला.",
+                "job-ssc-cgl": "एसएससी सीजीएल 2024 अधिसूचना जारी",
+                "job-railways-groupd": "भारतीय रेल्वे गट ड भरती 2024",
+                "job-upsc-cse": "यूपीएससी नागरी सेवा परीक्षा 2024 अर्ज",
+                "job-bank-po": "एसबीआय आणि पीएनबीमध्ये बँक पीओ/क्लार्क रिक्त जागा",
+                "job-police-constable": "पोलीस कॉन्स्टेबल भरती - राज्यनिहाय",
+                "summarizer-title": "नोकरी वर्णन सारांशक ✨",
+                "summarizer-placeholder": "त्वरित सारांश मिळवण्यासाठी येथे नोकरीचे वर्णन पेस्ट करा...",
+                "summarizer-button": "नोकरीचे वर्णन सारांशित करा ✨",
+                "summary-label": "सारांश:",
+                "loading-text": "सारांश तयार करत आहे...",
+                "error-message": "त्रुटी: सारांश तयार करता आला नाही. कृपया पुन्हा प्रयत्न करा.",
+                "schemes-title": "सरकारी योजना",
+                "schemes-intro": "खाली सरकारी योजनांची उदाहरणे दिली आहेत. केंद्र आणि राज्य आणि केंद्रशासित प्रदेशांमधील सरकारी योजनांची सर्वसमावेशक यादी आणि तपशीलवार माहितीसाठी, पात्रता आणि अर्ज प्रक्रियांसह, कृपया myScheme.gov.in किंवा JanSamarth.in यांसारख्या अधिकृत पोर्टल्सना भेट द्या. अधिक माहिती किंवा अर्ज प्रक्रियेसाठी खालील लिंक्सवर क्लिक करा.",
+                "scheme-pmjdy": "प्रधानमंत्री जन धन योजना (पीएमजेडीवाय)",
+                "scheme-pmjay": "आयुष्मान भारत प्रधानमंत्री जन आरोग्य योजना (पीएमजेएवाय)",
+                "scheme-pmay": "प्रधानमंत्री आवास योजना (पीएमएवाय)",
+                "scheme-ssy": "सुकन्या समृद्धी योजना (एसएसवाय)",
+                "scheme-apy": "अटल पेन्शन योजना (एपीवाय)",
+                "results-title": "नवीनतम निकाल",
+                "result-upsc-mains": "यूपीएससी नागरी सेवा मुख्य निकाल 2023",
+                "result-ssc-gd": "एसएससी जीडी कॉन्स्टेबल अंतिम निकाल 2023",
+                "result-ibps-po": "आयबीपीएस पीओ XI अंतिम निकाल",
+                "result-neet-ug": "नीट यूजी 2024 निकाल जाहीर",
+                "result-railway-ntpc": "रेल्वे एनटीपीसी सीबीटी-2 निकाल",
+                "admit-cards-title": "प्रवेशपत्र",
+                "admit-ssc-chsl": "एसएससी सीएचएसएल 2024 टियर I प्रवेशपत्र",
+                "admit-upsc-nda": "यूपीएससी एनडीए I 2024 प्रवेशपत्र",
+                "admit-ctet-july": "सीटीईटी जुलै 2024 प्रवेशपत्र",
+                "admit-jee-main": "जेईई मेन 2024 सत्र 2 प्रवेशपत्र",
+                "admit-uptet": "यूपीटीईटी 2024 प्रवेशपत्र",
+                "admission-title": "प्रवेश सूचना",
+                "admission-intro": "विद्यापीठातील प्रवेश, प्रवेश परीक्षा आणि विविध शैक्षणिक संस्थांमधील अर्ज करण्याच्या अंतिम तारखांवरील नवीनतम अद्यतने शोधा. वास्तविक सूचना किंवा अर्ज लिंकसाठी खालील लिंक्सवर क्लिक करा आणि प्लेसहोल्डर URL अधिकृत स्त्रोतांकडून बदला.",
+                "admission-jee-advanced": "जेईई ॲडव्हान्स 2024 अर्ज खुला",
+                "admission-du-ug": "दिल्ली विद्यापीठ यूजी प्रवेश 2024 सुरू",
+                "admission-ignou": "इग्नू जुलै 2024 सत्र प्रवेश",
+                "admission-state-cet": "राज्य सीईटी 2024 अधिसूचना जारी",
+                "admission-iim-cat": "आयआयएम कॅट 2024 नोंदणी सुरू",
+                "scholarship-title": "शिष्यवृत्ती सूचना",
+                "scholarship-intro": "केंद्र आणि सर्व राज्ये आणि केंद्रशासित प्रदेशांच्या सरकारांकडून नवीनतम शिष्यवृत्ती संधी शोधा. यामध्ये गुणवत्ता-आधारित, गरजा-आधारित आणि श्रेणी-विशिष्ट शिष्यवृत्तींचा समावेश आहे. सर्वसमावेशक तपशील आणि अर्जासाठी, नॅशनल स्कॉलरशिप पोर्टल किंवा बडी4स्टडी (राज्य शिष्यवृत्ती) यांसारख्या अधिकृत पोर्टल्सचा संदर्भ घ्या. खालील लिंक्सवर क्लिक करा आणि प्लेसहोल्डर URL अधिकृत स्त्रोतांकडून वास्तविक सूचना किंवा अर्ज लिंक्सने बदला.",
+                "scholarship-nsp-pre": "एनएसपी प्री-मॅट्रिक शिष्यवृत्ती 2024-25",
+                "scholarship-nsp-post": "एनएसपी पोस्ट-मॅट्रिक शिष्यवृत्ती 2024-25",
+                "scholarship-state-xyz": "राज्य-विशिष्ट शिष्यवृत्ती (उदा. यूपी, एमपी, पंजाब)",
+                "scholarship-ugc": "यूजीसी शिष्यवृत्ती योजना 2024",
+                "scholarship-minority": "अल्पसंख्याक व्यवहार शिष्यवृत्ती 2024",
+                "important-links-title": "महत्त्वाचे दुवे",
+                "link-official-portals": "अधिकृत सरकारी नोकरी पोर्टल्स (उदा. NCS)",
+                "link-state-updates": "राज्यनिहाय नोकरी अपडेट्स (उदा. FreeJobAlert)",
+                "link-syllabus": "परीक्षा अभ्यासक्रम आणि पॅटर्न",
+                "link-previous-papers": "मागील वर्षांचे प्रश्नपत्रिका",
+                "link-current-affairs": "दैनिक चालू घडामोडी",
+                "admin-title": "प्रशासक पॅनेल (लॉगिन)",
+                "admin-intro-1": "या विभागात सामान्यतः सामग्री व्यवस्थापन वैशिष्ट्यांमध्ये प्रवेश करण्यासाठी प्रशासक लॉगिन क्रेडेन्शियल्सची आवश्यकता असेल.",
+                "admin-intro-2": "वास्तविक ॲप्लिकेशनमध्ये, हे एका सुरक्षित लॉगिन पृष्ठाशी लिंक होईल जिथे तुम्ही नोकरी अपडेट्स, योजना, निकाल आणि इतर वेबसाइट सामग्री व्यवस्थापित करू शकता.",
+                "admin-login-button": "प्रशासक लॉगिनवर जा (प्लेसहोल्डर)",
+                "footer-copyright": "&copy; 2024 फटाफट नोकऱ्या. सर्व हक्क राखीव. | सार्वजनिक माहितीसाठी ❤️ सह डिझाइन केलेले",
+                "footer-support": "24/7 समर्थनासाठी, ईमेल: ashishyadav62064c@gmail.com",
+                "footer-privacy": "गोपनीयता धोरण",
+                "footer-disclaimer": "अस्वीकरण",
+                "footer-contact": "आमच्याशी संपर्क साधा",
+                "new-badge": "नवीन"
+            },
+            ta: { /* Tamil Translations (Placeholders - please replace with accurate translations) */
+                "main-title": "ஃபடாஃபட் வேலைகள்",
+                "nav-jobs": "வேலைகள்",
+                "nav-schemes": "திட்டங்கள்",
+                "nav-results": "முடிவுகள்",
+                "nav-admit-cards": "அட்மிட் கார்டுகள்",
+                "nav-admission": "சேர்க்கை",
+                "nav-scholarships": "உதவித்தொகை",
+                "nav-more": "மேலும்",
+                "search-placeholder": "வேலைகள், திட்டங்கள், முடிவுகளைத் தேடுங்கள்...",
+                "jobs-title": "சமீபத்திய வேலை அறிவிப்புகள்",
+                "jobs-intro": "கீழே விளக்கமான வேலை அறிவிப்புகள் கொடுக்கப்பட்டுள்ளன. அனைத்து மாநிலங்கள் மற்றும் யூனியன் பிரதேசங்கள் மற்றும் மத்திய அரசின் விரிவான மற்றும் நிகழ்நேர அறிவிப்புகளுக்கு, தயவுசெய்து தேசிய வேலைவாய்ப்பு சேவை, FreeJobAlert.com, அல்லது SarkariResult.com போன்ற அதிகாரப்பூர்வ அரசு வலைத்தளங்களைப் பார்க்கவும். விண்ணப்பிக்க, கீழே உள்ள இணைப்புகளைக் கிளிக் செய்து, அதிகாரப்பூர்வ அறிவிப்புகளிலிருந்து உண்மையான விண்ணப்பப் படிவ இணைப்புகளுடன் இடம்பிடித்த URLகளை மாற்றவும்.",
+                "job-ssc-cgl": "SSC CGL 2024 அறிவிப்பு வெளியானது",
+                "job-railways-groupd": "இந்தியன் ரயில்வே குரூப் D ஆட்சேர்ப்பு 2024",
+                "job-upsc-cse": "UPSC சிவில் சர்வீசஸ் தேர்வு 2024 விண்ணப்பம்",
+                "job-bank-po": "SBI & PNB இல் வங்கி PO/கிளார்க் காலியிடங்கள்",
+                "job-police-constable": "போலீஸ் கான்ஸ்டபிள் ஆட்சேர்ப்பு - மாநில வாரியாக",
+                "summarizer-title": "வேலை விவர சுருக்கி ✨",
+                "summarizer-placeholder": "விரைவான சுருக்கத்தைப் பெற வேலை விவரத்தை இங்கே ஒட்டவும்...",
+                "summarizer-button": "வேலை விவரத்தை சுருக்கவும் ✨",
+                "summary-label": "சுருக்கம்:",
+                "loading-text": "சுருக்கம் உருவாக்கப்படுகிறது...",
+                "error-message": "பிழை: சுருக்கத்தை உருவாக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+                "schemes-title": "அரசு திட்டங்கள்",
+                "schemes-intro": "கீழே விளக்கமான அரசு திட்டங்கள் கொடுக்கப்பட்டுள்ளன. மத்திய மற்றும் மாநில மற்றும் யூனியன் பிரதேச அரசு திட்டங்கள் பற்றிய விரிவான பட்டியல் மற்றும் விரிவான தகவல்களுக்கு, தகுதி மற்றும் விண்ணப்ப செயல்முறைகள் உட்பட, தயவுசெய்து myScheme.gov.in அல்லது JanSamarth.in போன்ற அதிகாரப்பூர்வ போர்ட்டல்களைப் பார்க்கவும். மேலும் தகவலுக்கு அல்லது விண்ணப்ப செயல்முறைக்கு கீழே உள்ள இணைப்புகளைக் கிளிக் செய்யவும்.",
+                "scheme-pmjdy": "பிரதம மந்திரி ஜன் தன் யோஜனா (PMJDY)",
+                "scheme-pmjay": "ஆயுஷ்மான் பாரத் பிரதம மந்திரி ஜன் ஆரோக்ய யோஜனா (PMJAY)",
+                "scheme-pmay": "பிரதம மந்திரி ஆவாஸ் யோஜனா (PMAY)",
+                "scheme-ssy": "சுகன்யா சம்ரித்தி யோஜனா (SSY)",
+                "scheme-apy": "அடல் பென்ஷன் யோஜனா (APY)",
+                "results-title": "சமீபத்திய முடிவுகள்",
+                "result-upsc-mains": "UPSC சிவில் சர்வீசஸ் மெயின்ஸ் தேர்வு முடிவு 2023",
+                "result-ssc-gd": "SSC GD கான்ஸ்டபிள் இறுதி முடிவு 2023",
+                "result-ibps-po": "IBPS PO XI இறுதி முடிவு",
+                "result-neet-ug": "NEET UG 2024 முடிவு அறிவிக்கப்பட்டது",
+                "result-railway-ntpc": "ரயில்வே NTPC CBT-2 முடிவு",
+                "admit-cards-title": "அட்மிட் கார்டுகள்",
+                "admit-ssc-chsl": "SSC CHSL 2024 டயர் I அட்மிட் கார்டு",
+                "admit-upsc-nda": "UPSC NDA I 2024 அட்மிட் கார்டு",
+                "admit-ctet-july": "CTET ஜூலை 2024 அட்மிட் கார்டு",
+                "admit-jee-main": "JEE மெயின் 2024 செஷன் 2 அட்மிட் கார்டு",
+                "admit-uptet": "UPTET 2024 அட்மிட் கார்டு",
+                "admission-title": "சேர்க்கை அறிவிப்புகள்",
+                "admission-intro": "பல்வேறு கல்வி நிறுவனங்களில் பல்கலைக்கழக சேர்க்கை, நுழைவுத் தேர்வுகள் மற்றும் விண்ணப்ப காலக்கெடு பற்றிய சமீபத்திய அறிவிப்புகளைக் கண்டறியவும். உண்மையான அறிவிப்பு அல்லது விண்ணப்ப இணைப்புகளுக்கு கீழே உள்ள இணைப்புகளைக் கிளிக் செய்து, அதிகாரப்பூர்வ மூலங்களிலிருந்து இடம்பிடித்த URLகளை மாற்றவும்.",
+                "admission-jee-advanced": "JEE மேம்பட்ட 2024 விண்ணப்பம் திறக்கப்பட்டது",
+                "admission-du-ug": "டெல்லி பல்கலைக்கழக UG சேர்க்கை 2024 தொடங்கியது",
+                "admission-ignou": "IGNOU ஜூலை 2024 அமர்வு சேர்க்கை",
+                "admission-state-cet": "மாநில CET 2024 அறிவிப்பு வெளியானது",
+                "admission-iim-cat": "IIM CAT 2024 பதிவு தொடங்கியது",
+                "scholarship-title": "உதவித்தொகை அறிவிப்புகள்",
+                "scholarship-intro": "மத்திய மற்றும் அனைத்து மாநில மற்றும் யூனியன் பிரதேச அரசுகளின் சமீபத்திய உதவித்தொகை வாய்ப்புகளைக் கண்டறியவும். இதில் தகுதி அடிப்படையிலான, தேவை அடிப்படையிலான மற்றும் வகை சார்ந்த உதவித்தொகைகள் அடங்கும். விரிவான விவரங்கள் மற்றும் விண்ணப்பத்திற்கு, தேசிய உதவித்தொகை போர்டல் அல்லது Buddy4Study (மாநில உதவித்தொகைகள்) போன்ற அதிகாரப்பூர்வ போர்ட்டல்களைப் பார்க்கவும். கீழே உள்ள இணைப்புகளைக் கிளிக் செய்து, அதிகாரப்பூர்வ மூலங்களிலிருந்து உண்மையான அறிவிப்பு அல்லது விண்ணப்ப இணைப்புகளுடன் இடம்பிடித்த URLகளை மாற்றவும்.",
+                "scholarship-nsp-pre": "NSP முன்-மெட்ரிக் உதவித்தொகை 2024-25",
+                "scholarship-nsp-post": "NSP பின்-மெட்ரிக் உதவித்தொகை 2024-25",
+                "scholarship-state-xyz": "மாநில வாரியான உதவித்தொகை (எ.கா., UP, MP, பஞ்சாப்)",
+                "scholarship-ugc": "UGC உதவித்தொகை திட்டங்கள் 2024",
+                "scholarship-minority": "சிறுபான்மையினர் நல உதவித்தொகை 2024",
+                "important-links-title": "முக்கிய இணைப்புகள்",
+                "link-official-portals": "அதிகாரப்பூர்வ அரசு வேலை போர்ட்டல்கள் (எ.கா., NCS)",
+                "link-state-updates": "மாநில வாரியான வேலை அறிவிப்புகள் (எ.கா., FreeJobAlert)",
+                "link-syllabus": "தேர்வு பாடத்திட்டம் & முறை",
+                "link-previous-papers": "முந்தைய ஆண்டு வினாத்தாள்கள்",
+                "link-current-affairs": "தினசரி நடப்பு நிகழ்வுகள்",
+                "admin-title": "நிர்வாகி குழு (உள்நுழைவு)",
+                "admin-intro-1": "இந்த பகுதிக்கு பொதுவாக உள்ளடக்க மேலாண்மை அம்சங்களை அணுக நிர்வாகி உள்நுழைவு சான்றுகள் தேவைப்படும்.",
+                "admin-intro-2": "ஒரு உண்மையான பயன்பாட்டில், இது ஒரு பாதுகாப்பான உள்நுழைவு பக்கத்துடன் இணைக்கப்படும், அங்கு நீங்கள் வேலை அறிவிப்புகள், திட்டங்கள், முடிவுகள் மற்றும் பிற வலைத்தள உள்ளடக்கத்தை நிர்வகிக்கலாம்.",
+                "admin-login-button": "நிர்வாகி உள்நுழைவுக்குச் செல்லவும் (இடம்பிடித்தது)",
+                "footer-copyright": "&copy; 2024 ஃபடாஃபட் வேலைகள். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை. | பொது தகவலுக்காக ❤️ உடன் வடிவமைக்கப்பட்டது",
+                "footer-support": "24/7 ஆதரவுக்கு, மின்னஞ்சல்: ashishyadav62064c@gmail.com",
+                "footer-privacy": "தனியுரிமைக் கொள்கை",
+                "footer-disclaimer": "மறுப்பு",
+                "footer-contact": "எங்களைத் தொடர்பு கொள்ளவும்",
+                "new-badge": "புதிய"
+            }
+        };
+
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang] && translations[lang][key]) {
+                    // Handle special cases for HTML content within text
+                    if (key === "jobs-intro" || key === "schemes-intro" || key === "footer-copyright" || key === "footer-support" || key === "admission-intro" || key === "scholarship-intro") {
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = translations[lang][key];
+                        // Preserve original links, only update text nodes
+                        Array.from(element.childNodes).forEach(node => {
+                            if (node.nodeType === Node.TEXT_NODE) {
+                                node.textContent = tempDiv.textContent; // Simple text content update
+                            } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'A') {
+                                // For anchor tags, ensure the text content is updated if it's part of the translation
+                                const originalHref = node.getAttribute('href');
+                                const originalTarget = node.getAttribute('target');
+                                const originalText = node.textContent;
+                                
+                                // Find the corresponding text in the translated string
+                                const regex = new RegExp(`>([^<]+)<`, 'g');
+                                let match;
+                                let newText = originalText;
+                                while ((match = regex.exec(tempDiv.innerHTML)) !== null) {
+                                    if (originalText.includes(match[1])) { // Simple check, might need more robust logic for complex cases
+                                        newText = match[1];
+                                        break;
+                                    }
+                                }
+                                node.textContent = newText; // Update text content of the link
+                                node.setAttribute('href', originalHref); // Preserve original href
+                                node.setAttribute('target', originalTarget); // Preserve original target
+                            } else {
+                                element.innerHTML = translations[lang][key]; // Fallback for complex HTML structures
+                            }
+                        });
+                         if (element.children.length === 0 && element.textContent.trim() === '') {
+                            element.innerHTML = translations[lang][key]; // If no children and empty, set innerHTML
+                        }
+
+                    } else if (key === "search-placeholder" || key === "summarizer-placeholder") {
+                        element.setAttribute('placeholder', translations[lang][key]);
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+            // Update document title separately
+            document.title = translations[lang]["main-title"] + " - Your Ultimate Government Update Portal";
+            // Update the text next to the logo as it's now a span
+            const logoTextSpan = document.querySelector('.logo-container span');
+            if (logoTextSpan) {
+                logoTextSpan.textContent = translations[lang]["main-title"];
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const allLinkItems = document.querySelectorAll('.link-item');
+            const languageSelector = document.getElementById('language-selector');
+            const jobDescriptionInput = document.getElementById('jobDescriptionInput');
+            const summarizeButton = document.getElementById('summarizeButton');
+            const summaryOutput = document.getElementById('summaryOutput');
+            const summaryText = document.getElementById('summaryText');
+            const summarizerLoading = document.getElementById('summarizerLoading');
+            const summarizerError = document.getElementById('summarizerError');
+
+            // Set default language to English on load
+            setLanguage('en');
+
+            languageSelector.addEventListener('change', function() {
+                setLanguage(this.value);
+            });
+
+            searchInput.addEventListener('keyup', function(event) {
+                const searchTerm = event.target.value.toLowerCase();
+
+                allLinkItems.forEach(item => {
+                    // For search, always use English text for filtering consistency
+                    const linkText = item.querySelector('a').textContent.toLowerCase();
+                    if (linkText.includes(searchTerm)) {
+                        item.style.display = 'flex';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+
+            // Gemini API Integration for Job Description Summarizer
+            summarizeButton.addEventListener('click', async () => {
+                const jobDescription = jobDescriptionInput.value.trim();
+                if (!jobDescription) {
+                    summarizerError.textContent = translations[languageSelector.value]["error-message"] + " (Please enter a job description.)";
+                    summarizerError.classList.remove('hidden');
+                    summaryOutput.classList.add('hidden');
+                    return;
+                }
+
+                summaryOutput.classList.add('hidden');
+                summarizerError.classList.add('hidden');
+                summarizerLoading.classList.remove('hidden');
+
+                try {
+                    const prompt = `Summarize the following job description concisely, highlighting key responsibilities, required qualifications, and any notable benefits. Keep it to a maximum of 100 words:\n\n${jobDescription}`;
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = ""; // Leave as-is, Canvas will provide in runtime
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const summary = result.candidates[0].content.parts[0].text;
+                        summaryText.textContent = summary;
+                        summaryOutput.classList.remove('hidden');
+                    } else {
+                        summarizerError.textContent = translations[languageSelector.value]["error-message"] + " (No summary generated.)";
+                        summarizerError.classList.remove('hidden');
+                    }
+                } catch (error) {
+                    console.error('Error calling Gemini API:', error);
+                    summarizerError.textContent = translations[languageSelector.value]["error-message"] + ` (${error.message || 'Unknown error'})`;
+                    summarizerError.classList.remove('hidden');
+                } finally {
+                    summarizerLoading.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
